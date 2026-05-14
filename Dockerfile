@@ -44,7 +44,7 @@ RUN useradd -m -u 1001 appuser
 
 # === SECRETOS (MALÍSIMA PRÁCTICA) ===
 # TODO: Eliminar completamente esta línea
-RUN echo 'SECRET_KEY=super_secret_key_123' > /root/.env
+RUN echo 'SECRET_KEY=super_secret_key_1234' > /root/.env
 
 COPY index.html /var/www/html/index.html
 
