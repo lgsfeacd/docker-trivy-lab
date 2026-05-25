@@ -31,7 +31,7 @@ FROM debian:13-slim
 
 # === INSTALACIÓN DE PAQUETES ===
 # Cada RUN es una capa nueva → imagen más grande, cache ineficiente
-RUN apt-get update && apt-get install -y openssl curl wget netcat-traditional && rm -rf /var/lib/apt/lists/* 
+RUN apt-get update && apt-get install -y openssl netcat-traditional && rm -rf /var/lib/apt/lists/* 
 
 # === USUARIO ===
 # TODO: Crear usuario no-root y cambiar a él
@@ -45,7 +45,7 @@ USER appuser
 
 # === COMANDO DE INICIO ===
 # TODO: Reemplazar por un comando seguro
-CMD ["sh", "-c", "while true; do sleep 30 ; done"]
+CMD ["python3", "-m", "http.server"]
 
 # =============================================
 # RESUMEN DE CAMBIOS RECOMENDADOS:
